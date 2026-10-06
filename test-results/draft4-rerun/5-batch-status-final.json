@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"da5ece39-9541-43cb-9b60-dc0615ac18e8\",\n  \"status\": \"COMPLETED\",\n  \"total\": 3,\n  \"completed\": 3,\n  \"failed\": 0,\n  \"creditsUsed\": 60,\n  \"results\": [\n    {\n      \"index\": 0,\n      \"url\": \"https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384\",\n      \"success\": true,\n      \"data\": [\n        {\n          \"product_name\": \"Apple - AirPods 4 - White\",\n          \"price\": \"\",\n          \"currency\": \"\",\n          \"in_stock\": \"\"\n        }\n      ],\n      \"title\": \"Apple AirPods 4 White MXP63LL/A - Best BuyLoading...Loading...Loading...Loading...Loading...\",\n      \"error\": null\n    },\n    {\n      \"index\": 1,\n      \"url\": \"https://www.bestbuy.com/product/jbl-vibe-beam-2-noise-cancelling-earbuds-2025-black/J7LXFWXFJH/sku/6611536\",\n      \"success\": true,\n      \"data\": [\n        {\n          \"product_name\": \"JBL - Vibe Beam 2 Noise Cancelling Earbuds - 2025 - Black\",\n          \"price\": \"39.95\",\n          \"currency\": \"USD\",\n          \"in_stock\": \"Yes\"\n        }\n      ],\n      \"title\": \"JBL Vibe Beam 2 Noise Cancelling Earbuds 2025 Black JBLVBEAM2BLKAM - Best BuyLoading...Loading...Loading...Loading...Loading...Loading...\",\n      \"error\": null\n    },\n    {\n      \"index\": 2,\n      \"url\": \"https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL\",\n      \"success\": true,\n      \"data\": [\n        {\n          \"product_name\": \"Samsung - Galaxy Buds3 Pro Wireless Earbud Headphones - Silver\",\n          \"price\": \"149.99\",\n          \"currency\": \"USD\",\n          \"in_stock\": \"Yes\"\n        }\n      ],\n      \"title\": \"Samsung Galaxy Buds3 Pro Wireless Earbud Headphones Silver SM-R630NZAAXAR - Best BuyLoading...Loading...Loading...Loading...Loading...Loading...\",\n      \"error\": null\n    }\n  ],\n  \"createdAt\": \"2026-09-02T07:04:05.675+00:00\",\n  \"completedAt\": \"2026-09-02T07:04:24.152+00:00\"\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 7
+}

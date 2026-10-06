@@ -1,0 +1,9 @@
+{
+  "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+  "data": [
+    {
+      "type": "Wireless Headphones",
+      "properties": ""
+    }
+  ]
+}

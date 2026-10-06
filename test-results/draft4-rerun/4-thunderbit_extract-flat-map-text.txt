@@ -1,0 +1,11 @@
+{
+  "url": "https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384",
+  "data": [
+    {
+      "product_name": "Apple - AirPods 4 - White",
+      "price": "$129.99",
+      "currency": "USD",
+      "in_stock": "Yes"
+    }
+  ]
+}

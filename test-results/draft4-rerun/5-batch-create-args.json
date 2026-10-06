@@ -1,0 +1,13 @@
+{
+  "urls": [
+    "https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384",
+    "https://www.bestbuy.com/product/jbl-vibe-beam-2-noise-cancelling-earbuds-2025-black/J7LXFWXFJH/sku/6611536",
+    "https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL"
+  ],
+  "schema": {
+    "product_name": "the product name as shown in the page title",
+    "price": "the numeric price in USD",
+    "currency": "the currency code",
+    "in_stock": "whether the item is available, true or false"
+  }
+}

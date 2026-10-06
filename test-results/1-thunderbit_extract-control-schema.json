@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"url\": \"https://github.com/pricing\",\n  \"data\": [\n    {\n      \"type\": \"Free\",\n      \"properties\": \"Unlimited public/private repositories\\\\nDependabot security and version updates\\\\n2,000 CI/CD minutes/month\\\\n500MB of Packages storage\\\\nIssues & Projects\\\\nCommunity support\"\n    },\n    {\n      \"type\": \"Team\",\n      \"properties\": \"Access to GitHub Codespaces\\\\nRepository rules\\\\nMultiple reviewers in pull requests\\\\nDraft pull requests\\\\nCode owners\\\\nRequired reviewers\\\\nPages and Wikis\\\\nEnvironment deployment branches and secrets\\\\n3,000 CI/CD minutes/month\\\\n2GB of Packages storage\\\\nWeb-based support\"\n    },\n    {\n      \"type\": \"Enterprise\",\n      \"properties\": \"Data residency\\\\nEnterprise Managed Users\\\\nUser provisioning through SCIM\\\\nEnterprise Account to centrally manage multiple organizations\\\\nEnvironment protection rules\\\\nRepository rules\\\\nAudit Log API\\\\nSOC1, SOC2, type 2 reports annually\\\\nFedRAMP Tailored Authority to Operate (ATO)\\\\nSAML single sign-on\\\\nAdvanced auditing\\\\nGitHub Connect\\\\n50,000 CI/CD minutes/month\\\\n50GB of Packages storage\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 4
+}

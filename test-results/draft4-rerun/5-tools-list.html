@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MCP tools/list — Bright Data Rapid + Thunderbit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, Segoe UI, sans-serif;
+      background: #18181b;
+      color: #fafafa;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 28px 40px; }
+    .kicker { color: #a1a1aa; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    h1 { font-size: 22px; font-weight: 600; margin: 6px 0 8px; }
+    .caption { color: #a1a1aa; font-size: 13px; line-height: 1.45; margin: 0 0 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .col { border: 1px solid #3f3f46; border-radius: 10px; overflow: hidden; background: #27272a; }
+    .head { padding: 14px 16px 12px; border-bottom: 1px solid #3f3f46; }
+    .name { font-size: 15px; font-weight: 600; }
+    .meta { color: #a1a1aa; font-size: 12px; margin-top: 4px; }
+    ol { list-style: none; margin: 0; padding: 8px 0 10px; }
+    li {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 16px; font-size: 13px; font-family: ui-monospace, Consolas, monospace;
+      border-top: 1px solid #3f3f46;
+    }
+    li:first-child { border-top: none; }
+    .n { color: #71717a; width: 16px; text-align: right; }
+    .foot { margin-top: 18px; color: #71717a; font-size: 11px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">Live MCP initialize + tools/list · stdio · 2026-09-02T07:04:04Z</div>
+    <h1>Both servers loaded</h1>
+    <p class="caption">
+      Captured from the same stdio session as the flat-map batch extract.
+      Not a host Settings screenshot: Bright Data and Thunderbit are not in this Cursor <code>mcp.json</code>.
+    </p>
+    <div class="grid">
+      <div class="col">
+        <div class="head">
+          <div class="name">Bright Data</div>
+          <div class="meta">serverInfo.version 2.11.1 · Rapid mode · 5 tools</div>
+        </div>
+        <ol>
+          <li><span class="n">1</span>search_engine</li>
+          <li><span class="n">2</span>scrape_as_markdown</li>
+          <li><span class="n">3</span>search_engine_batch</li>
+          <li><span class="n">4</span>scrape_batch</li>
+          <li><span class="n">5</span>discover</li>
+        </ol>
+      </div>
+      <div class="col">
+        <div class="head">
+          <div class="name">thunderbit-open-api</div>
+          <div class="meta">serverInfo.version 1.0.4 · 7 tools</div>
+        </div>
+        <ol>
+          <li><span class="n">1</span>thunderbit_distill</li>
+          <li><span class="n">2</span>thunderbit_extract</li>
+          <li><span class="n">3</span>thunderbit_suggest_fields</li>
+          <li><span class="n">4</span>thunderbit_batch_distill_create</li>
+          <li><span class="n">5</span>thunderbit_batch_distill_status</li>
+          <li><span class="n">6</span>thunderbit_batch_extract_create</li>
+          <li><span class="n">7</span>thunderbit_batch_extract_status</li>
+        </ol>
+      </div>
+    </div>
+    <p class="foot">Source: test-results/draft4-rerun/5-tools-list.json · packages @brightdata/mcp@2.11.1 and @thunderbit/mcp-server@1.0.4</p>
+  </div>
+</body>
+</html>

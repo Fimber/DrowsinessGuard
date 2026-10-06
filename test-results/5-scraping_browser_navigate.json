@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Tool 'scraping_browser_navigate' execution failed: Error retrieving browser credentials: Request failed with status code 407"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 4
+}

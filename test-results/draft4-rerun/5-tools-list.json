@@ -1,0 +1,31 @@
+{
+  "captured_at": "2026-09-02T07:04:04.038Z",
+  "brightdata": {
+    "serverInfo": {
+      "name": "Bright Data",
+      "version": "2.11.1"
+    },
+    "tools": [
+      "search_engine",
+      "scrape_as_markdown",
+      "search_engine_batch",
+      "scrape_batch",
+      "discover"
+    ]
+  },
+  "thunderbit": {
+    "serverInfo": {
+      "name": "thunderbit-open-api",
+      "version": "1.0.4"
+    },
+    "tools": [
+      "thunderbit_distill",
+      "thunderbit_extract",
+      "thunderbit_suggest_fields",
+      "thunderbit_batch_distill_create",
+      "thunderbit_batch_distill_status",
+      "thunderbit_batch_extract_create",
+      "thunderbit_batch_extract_status"
+    ]
+  }
+}

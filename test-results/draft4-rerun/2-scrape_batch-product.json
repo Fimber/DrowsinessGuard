@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[\n  {\n    \"status\": \"fulfilled\",\n    \"value\": {\n      \"url\": \"https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-black/J7C5V6W79Y/sku/6683754\",\n      \"content\": \"\"\n    }\n  }\n]"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 5
+}

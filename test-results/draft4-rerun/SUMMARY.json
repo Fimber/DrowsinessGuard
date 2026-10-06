@@ -1,0 +1,290 @@
+{
+  "started_at": "2026-09-01T21:43:20.624Z",
+  "packages": {
+    "brightdata": "2.11.1",
+    "thunderbit": "1.0.4"
+  },
+  "steps": [
+    {
+      "step": "init",
+      "brightdata_server": {
+        "name": "Bright Data",
+        "version": "2.11.1"
+      },
+      "thunderbit_server": {
+        "name": "thunderbit-open-api",
+        "version": "1.0.4"
+      },
+      "brightdata_stderr_tail": "Checking for required zones...\nRequired zone \"mcp_unlocker\" already exists\nRequired zone \"mcp_browser\" already exists\nStarting server...\n"
+    },
+    {
+      "step": "tools_list",
+      "brightdata_count": 5,
+      "brightdata_names": [
+        "search_engine",
+        "scrape_as_markdown",
+        "search_engine_batch",
+        "scrape_batch",
+        "discover"
+      ],
+      "thunderbit_count": 7,
+      "thunderbit_names": [
+        "thunderbit_distill",
+        "thunderbit_extract",
+        "thunderbit_suggest_fields",
+        "thunderbit_batch_distill_create",
+        "thunderbit_batch_distill_status",
+        "thunderbit_batch_extract_create",
+        "thunderbit_batch_extract_status"
+      ],
+      "batch_extract_input_keys": [
+        "urls",
+        "schema",
+        "timeout",
+        "apiKey"
+      ],
+      "extract_input_keys": [
+        "url",
+        "schema",
+        "timeout",
+        "waitFor",
+        "renderMode",
+        "apiKey"
+      ],
+      "batch_extract_has_content": false,
+      "extract_has_content": false,
+      "batch_extract_urls_maxItems": 100
+    },
+    {
+      "step": "search_engine",
+      "isError": false,
+      "error": null,
+      "organic_count": 10,
+      "organic": [
+        {
+          "link": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+          "title": "Wireless Earbuds - Headphones",
+          "kind": "listing_or_guide"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/electronics/headphones/abcat0204000.c?id=abcat0204000",
+          "title": "Headphones, Earbuds & Wireless ...",
+          "kind": "other"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/shop/best-wireless-earbuds-for-android-phones",
+          "title": "Best Wireless Earbuds For Android Phones",
+          "kind": "listing_or_guide"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/shop/cheap-wireless-earbuds",
+          "title": "Cheap Wireless Earbuds",
+          "kind": "listing_or_guide"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/headphones/earbud-in-ear-headphones/pcmcat143000050007.c?id=pcmcat143000050007",
+          "title": "Earbuds & Earphones",
+          "kind": "listing_or_guide"
+        },
+        {
+          "link": "https://www.bestbuy.com/product/jvc-marshmallow-true-wireless-earbuds-haa18ta-blue/J7GH48R27L/sku/11911379/reviews",
+          "title": "JVC Marshmallow True Wireless Earbuds HAA18TA Blue ...",
+          "kind": "product"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/searchpage.jsp?browsedCategory=pcmcat331200050015&cp=57&id=pcat17071&st=categoryid%24pcmcat331200050015",
+          "title": "Wireless Earbuds - Headphones",
+          "kind": "search"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/searchpage.jsp?browsedCategory=pcmcat1498066426386&id=pcat17071&qp=microphonefeatures_facet%3DMicrophone%20Features~Voice%20Activated%5Ewirelessconnectivity_facet%3DWireless%20Connectivity~Bluetooth&st=categoryid%24pcmcat1498066426386",
+          "title": "Voice Activated and Bluetooth True Wireless Earbud ...",
+          "kind": "search"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=wireless%20earbuds",
+          "title": "wireless earbuds",
+          "kind": "search"
+        },
+        {
+          "link": "https://www.bestbuy.com/site/questions/beats-powerbeats-pro-totally-wireless-earbuds-ivory/6341989",
+          "title": "Beats - Powerbeats Pro Totally Wireless Earbuds - Ivory",
+          "kind": "other"
+        }
+      ]
+    },
+    {
+      "step": "scrape_batch",
+      "isError": false,
+      "error": null,
+      "input_urls": [
+        "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+        "https://www.bestbuy.com/site/electronics/headphones/abcat0204000.c?id=abcat0204000",
+        "https://www.bestbuy.com/site/shop/best-wireless-earbuds-for-android-phones"
+      ],
+      "allSettled": true,
+      "entries": [
+        {
+          "status": "fulfilled",
+          "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+          "bytes": 19181,
+          "chars": 19174,
+          "kb": 18.73,
+          "price_token_count": 23,
+          "unique_product_urls": 10,
+          "product_urls_sample": [
+            "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-black/J7C5V6W79Y/sku/6683754",
+            "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-white-smoke/J7C5V6W76G/sku/6683750",
+            "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-eucalyptus-green/J7C5V6W7RZ/sku/6683752",
+            "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-dewdrop-mint/J7C5V6W7PR/sku/6683753",
+            "https://www.bestbuy.com/product/sony-wf-1000xm6-best-truly-wireless-noise-cancelling-earbuds-black/J7XSRH5W6P/sku/6667490",
+            "https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384",
+            "https://www.bestbuy.com/product/apple-airpods-4-with-active-noise-cancellation-white/JJGCQ832YX/sku/12309555",
+            "https://www.bestbuy.com/product/skullcandy-crusher-1080-over-the-ear-noise-canceling-wireless-bluetooth-headphones-with-sound-by-bose-black/J3GWL57W8L/sku/6675674"
+          ],
+          "has_loading": false
+        },
+        {
+          "status": "fulfilled",
+          "url": "https://www.bestbuy.com/site/electronics/headphones/abcat0204000.c?id=abcat0204000",
+          "reason": ""
+        },
+        {
+          "status": "fulfilled",
+          "url": "https://www.bestbuy.com/site/shop/best-wireless-earbuds-for-android-phones",
+          "bytes": 51595,
+          "chars": 51577,
+          "kb": 50.39,
+          "price_token_count": 110,
+          "unique_product_urls": 31,
+          "product_urls_sample": [
+            "https://www.bestbuy.com/product/beats-powerbeats-pro-2-true-wireless-active-noise-canceling-earbuds-electric-orange/JJGCQ3FZQ8",
+            "https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL",
+            "https://www.bestbuy.com/product/google-pixel-buds-a-series-true-wireless-in-ear-headphones-clearly-white/JJ8T5C79KC",
+            "https://www.bestbuy.com/product/soundcore-by-anker-p41i-bluetooth-wireless-in-ear-earbuds-with-portable-usb-c-3000mah-phone-charger-black/JJ858RLT8Y",
+            "https://www.bestbuy.com/product/soundcore-p30i-by-anker-noise-cancelling-earbuds-hands-free-viewing-smart-noise-cancelling-powerful-bass-45h-playtime-green/JJ858R2YRP",
+            "https://www.bestbuy.com/product/studio-buds-totally-wireless-noise-cancelling-earbuds-beats-red/JJ8ZHSC4RZ",
+            "https://www.bestbuy.com/product/beats-fit-pro-true-wireless-noise-cancelling-in-ear-earbuds-black/JJ8ZHSLV44",
+            "https://www.bestbuy.com/product/beats-fit-pro-true-wireless-noise-cancelling-in-ear-earbuds-white/JJ8ZHSY77Z"
+          ],
+          "has_loading": false
+        }
+      ]
+    },
+    {
+      "step": "harvest_pass",
+      "unique_product_urls": 41,
+      "sample": [
+        "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-black/J7C5V6W79Y/sku/6683754",
+        "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-white-smoke/J7C5V6W76G/sku/6683750",
+        "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-eucalyptus-green/J7C5V6W7RZ/sku/6683752",
+        "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-dewdrop-mint/J7C5V6W7PR/sku/6683753",
+        "https://www.bestbuy.com/product/sony-wf-1000xm6-best-truly-wireless-noise-cancelling-earbuds-black/J7XSRH5W6P/sku/6667490",
+        "https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384",
+        "https://www.bestbuy.com/product/apple-airpods-4-with-active-noise-cancellation-white/JJGCQ832YX/sku/12309555",
+        "https://www.bestbuy.com/product/skullcandy-crusher-1080-over-the-ear-noise-canceling-wireless-bluetooth-headphones-with-sound-by-bose-black/J3GWL57W8L/sku/6675674",
+        "https://www.bestbuy.com/product/apple-airpods-max-2-usb-c-midnight/JJGCQYH99P/sku/6494847",
+        "https://www.bestbuy.com/product/jbl-vibe-beam-2-noise-cancelling-earbuds-2025-black/J7LXFWXFJH/sku/6611536",
+        "https://www.bestbuy.com/product/beats-powerbeats-pro-2-true-wireless-active-noise-canceling-earbuds-electric-orange/JJGCQ3FZQ8",
+        "https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL"
+      ]
+    },
+    {
+      "step": "scrape_batch_product",
+      "isError": false,
+      "fulfilled": false,
+      "status": "fulfilled",
+      "reason": ""
+    },
+    {
+      "step": "extract_target",
+      "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+      "source": "this-run scrape_batch listing page"
+    },
+    {
+      "step": "thunderbit_extract",
+      "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+      "source": "this-run scrape_batch listing page",
+      "isError": false,
+      "error": null,
+      "returned_keys": [
+        "type",
+        "properties"
+      ],
+      "wanted_fields_present": [],
+      "parsed": {
+        "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+        "data": [
+          {
+            "type": "Wireless Headphones",
+            "properties": ""
+          }
+        ]
+      }
+    }
+  ],
+  "finished_at": "2026-09-01T21:46:55.960Z",
+  "flat_map_batch": {
+    "captured_at": "2026-09-02T07:04:04.038Z",
+    "job_id": "da5ece39-9541-43cb-9b60-dc0615ac18e8",
+    "schema": {
+      "product_name": "the product name as shown in the page title",
+      "price": "the numeric price in USD",
+      "currency": "the currency code",
+      "in_stock": "whether the item is available, true or false"
+    },
+    "createdAt": "2026-09-02T07:04:05.675+00:00",
+    "completedAt": "2026-09-02T07:04:24.152+00:00",
+    "status": "COMPLETED",
+    "total": 3,
+    "completed": 3,
+    "failed": 0,
+    "creditsUsed": 60,
+    "first_poll": {
+      "status": "PROCESSING",
+      "completed": 0,
+      "failed": 0,
+      "creditsUsed": 0,
+      "per_url": "success false, data null, error null"
+    },
+    "rows": [
+      {
+        "url": "https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384",
+        "success": true,
+        "error": null,
+        "product_name": "Apple - AirPods 4 - White",
+        "price": "",
+        "currency": "",
+        "in_stock": ""
+      },
+      {
+        "url": "https://www.bestbuy.com/product/jbl-vibe-beam-2-noise-cancelling-earbuds-2025-black/J7LXFWXFJH/sku/6611536",
+        "success": true,
+        "error": null,
+        "product_name": "JBL - Vibe Beam 2 Noise Cancelling Earbuds - 2025 - Black",
+        "price": "39.95",
+        "currency": "USD",
+        "in_stock": "Yes"
+      },
+      {
+        "url": "https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL",
+        "success": true,
+        "error": null,
+        "product_name": "Samsung - Galaxy Buds3 Pro Wireless Earbud Headphones - Silver",
+        "price": "149.99",
+        "currency": "USD",
+        "in_stock": "Yes"
+      }
+    ],
+    "single_extract_same_airpods_url": {
+      "product_name": "Apple - AirPods 4 - White",
+      "price": "$129.99",
+      "currency": "USD",
+      "in_stock": "Yes"
+    },
+    "json_schema_batch_not_evidence": {
+      "job_id": "cf028f7a-18fc-4b4c-bf61-8ceb16c057a1",
+      "note": "Returned type/properties keys. Galaxy Buds EXTRACT_FAILED. Do not use as Draft 5 extract evidence."
+    }
+  }
+}

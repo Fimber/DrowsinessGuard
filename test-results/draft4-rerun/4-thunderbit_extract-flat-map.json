@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"url\": \"https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384\",\n  \"data\": [\n    {\n      \"product_name\": \"Apple - AirPods 4 - White\",\n      \"price\": \"$129.99\",\n      \"currency\": \"USD\",\n      \"in_stock\": \"Yes\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

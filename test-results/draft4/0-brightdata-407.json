@@ -1,0 +1,7 @@
+{
+  "this_run": {
+    "zone_get_active_zones": "HTTP 407",
+    "x-brd-error": "Authentication failed",
+    "x-brd-err-msg": "You are not allowed to access our API via this IP (143.105.174.138). Please verify your settings or allowlist this IP."
+  }
+}

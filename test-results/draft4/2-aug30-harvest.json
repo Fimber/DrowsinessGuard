@@ -1,0 +1,46 @@
+{
+  "pages": [
+    {
+      "url": "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015",
+      "status": "fulfilled",
+      "chars": 19346,
+      "kb": 18.91,
+      "product_urls": 20,
+      "price_tokens": 51,
+      "loading": false
+    },
+    {
+      "url": "https://www.bestbuy.com/site/headphones/true-wireless-headphones/pcmcat1498066426386.c?id=pcmcat1498066426386",
+      "status": "fulfilled",
+      "chars": 16771,
+      "kb": 16.38,
+      "product_urls": 11,
+      "price_tokens": 24,
+      "loading": false
+    },
+    {
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=earbuds%20wireless",
+      "status": "fulfilled",
+      "chars": 19528,
+      "kb": 19.08,
+      "product_urls": 17,
+      "price_tokens": 33,
+      "loading": true
+    }
+  ],
+  "unique_product_urls": 34,
+  "sample": [
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-black/J7C5V6W79Y/sku/6683754",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-black/J7C5V6W79Y/sku/6683754#tabbed-customerreviews",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-white-smoke/J7C5V6W76G/sku/6683750",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-white-smoke/J7C5V6W76G/sku/6683750#tabbed-customerreviews",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-eucalyptus-green/J7C5V6W7RZ/sku/6683752",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-eucalyptus-green/J7C5V6W7RZ/sku/6683752#tabbed-customerreviews",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-dewdrop-mint/J7C5V6W7PR/sku/6683753",
+    "https://www.bestbuy.com/product/bose-quietcomfort-headphones-2nd-gen-wireless-over-ear-active-noise-cancelling-immersive-audio-usb-c-charging-dewdrop-mint/J7C5V6W7PR/sku/6683753#tabbed-customerreviews",
+    "https://www.bestbuy.com/product/sony-wh-1000xm6-best-wireless-noise-cancelling-headphones-black/J7XSRH5RCF/sku/6620467",
+    "https://www.bestbuy.com/product/sony-wh-1000xm6-best-wireless-noise-cancelling-headphones-black/J7XSRH5RCF/sku/6620467#tabbed-customerreviews",
+    "https://www.bestbuy.com/product/apple-airpods-4-with-active-noise-cancellation-white/JJGCQ832YX/sku/12309555",
+    "https://www.bestbuy.com/product/apple-airpods-4-with-active-noise-cancellation-white/JJGCQ832YX#tabbed-customerreviews"
+  ]
+}

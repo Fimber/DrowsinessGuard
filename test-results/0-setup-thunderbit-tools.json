@@ -1,0 +1,292 @@
+{
+  "result": {
+    "tools": [
+      {
+        "name": "thunderbit_distill",
+        "title": "Distill Web Page to Markdown",
+        "description": "Convert a web page into clean, LLM-ready Markdown. Ideal for research, content analysis, RAG ingestion, and reading articles behind complex layouts. Costs 1 credit per call.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Web page URL to convert"
+            },
+            "timeout": {
+              "type": "integer",
+              "minimum": 5000,
+              "maximum": 60000,
+              "description": "Timeout in ms (5000-60000)"
+            },
+            "waitFor": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000,
+              "description": "Wait time after load for dynamic content (ms)"
+            },
+            "includeTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "HTML tags to include"
+            },
+            "excludeTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "HTML tags to exclude"
+            },
+            "countryCode": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2,
+              "description": "ISO 2-letter country code (default US)"
+            },
+            "renderMode": {
+              "type": "string",
+              "enum": [
+                "none",
+                "basic",
+                "full"
+              ],
+              "description": "Page render mode"
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_extract",
+        "title": "Extract Structured Data",
+        "description": "Extract structured data from a web page using a JSON Schema. Perfect for lead generation, price monitoring, competitive analysis, and dataset building. Use thunderbit_suggest_fields first if you don't know the page structure. Costs 20 credits per call.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Web page URL"
+            },
+            "schema": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "JSON Schema defining the data structure to extract"
+            },
+            "timeout": {
+              "type": "integer",
+              "minimum": 5000,
+              "maximum": 120000
+            },
+            "waitFor": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            "renderMode": {
+              "type": "string",
+              "enum": [
+                "none",
+                "basic",
+                "full"
+              ]
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "url",
+            "schema"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_suggest_fields",
+        "title": "Suggest Extractable Fields",
+        "description": "Analyze a web page and automatically suggest extractable fields/columns. Start here when you don't know what data a page contains — returns field names, types, and extraction instructions usable directly with thunderbit_extract. Free — no credits consumed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Web page URL to analyze"
+            },
+            "prompt": {
+              "type": "string",
+              "description": "Optional guidance for what fields to suggest"
+            },
+            "countryCode": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_batch_distill_create",
+        "title": "Create Batch Distill Job",
+        "description": "Create a batch job to distill multiple URLs into Markdown (max 100 URLs). Returns a job ID — poll thunderbit_batch_distill_status until complete. Costs 1 credit per URL.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "minItems": 1,
+              "maxItems": 100,
+              "description": "URLs to distill (max 100)"
+            },
+            "timeout": {
+              "type": "integer",
+              "minimum": 5000,
+              "maximum": 60000
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "urls"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_batch_distill_status",
+        "title": "Check Batch Distill Status",
+        "description": "Poll the status and retrieve results of a batch distill job. Free (0 credits).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "jobId": {
+              "type": "string",
+              "description": "Job ID returned from thunderbit_batch_distill_create"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Page number, 0-based (default 0)"
+            },
+            "pageSize": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Results per page (default 20, max 100)"
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "jobId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_batch_extract_create",
+        "title": "Create Batch Extract Job",
+        "description": "Create a batch job to extract structured data from multiple URLs (max 100 URLs). Returns a job ID — poll thunderbit_batch_extract_status until complete. Costs 20 credits per URL.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "minItems": 1,
+              "maxItems": 100
+            },
+            "schema": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "JSON Schema applied to every URL"
+            },
+            "timeout": {
+              "type": "integer",
+              "minimum": 5000,
+              "maximum": 120000
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "urls",
+            "schema"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      },
+      {
+        "name": "thunderbit_batch_extract_status",
+        "title": "Check Batch Extract Status",
+        "description": "Poll the status and retrieve results of a batch extract job. Free (0 credits).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pageSize": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "apiKey": {
+              "type": "string",
+              "description": "Thunderbit API key (tb_xxx). Optional if THUNDERBIT_API_KEY env var is set."
+            }
+          },
+          "required": [
+            "jobId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        }
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

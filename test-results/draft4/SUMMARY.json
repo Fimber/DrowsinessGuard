@@ -1,0 +1,113 @@
+{
+  "started_at": "2026-09-01T19:39:00.620Z",
+  "packages": {
+    "brightdata": "2.11.1",
+    "thunderbit": "1.0.4"
+  },
+  "steps": [
+    {
+      "step": "init",
+      "brightdata_server": {
+        "name": "Bright Data",
+        "version": "2.11.1"
+      },
+      "thunderbit_server": {
+        "name": "thunderbit-open-api",
+        "version": "1.0.4"
+      },
+      "brightdata_stderr_tail": "Checking for required zones...\nError checking/creating zones: Request failed with status code 407\nStarting server...\n",
+      "thunderbit_stderr_tail": ""
+    },
+    {
+      "step": "tools_list",
+      "brightdata_count": 5,
+      "brightdata_names": [
+        "search_engine",
+        "scrape_as_markdown",
+        "search_engine_batch",
+        "scrape_batch",
+        "discover"
+      ],
+      "thunderbit_count": 7,
+      "thunderbit_names": [
+        "thunderbit_distill",
+        "thunderbit_extract",
+        "thunderbit_suggest_fields",
+        "thunderbit_batch_distill_create",
+        "thunderbit_batch_distill_status",
+        "thunderbit_batch_extract_create",
+        "thunderbit_batch_extract_status"
+      ],
+      "batch_extract_input_keys": [
+        "urls",
+        "schema",
+        "timeout",
+        "apiKey"
+      ],
+      "extract_input_keys": [
+        "url",
+        "schema",
+        "timeout",
+        "waitFor",
+        "renderMode",
+        "apiKey"
+      ],
+      "batch_extract_has_content": false,
+      "extract_has_content": false,
+      "batch_extract_urls_maxItems": 100
+    },
+    {
+      "step": "search_engine",
+      "isError": true,
+      "error": "Tool 'search_engine' execution failed: Request failed with status code 407",
+      "organic_count": 0,
+      "organic_kinds": {},
+      "organic": []
+    },
+    {
+      "step": "search_engine_retry",
+      "isError": true,
+      "error": "Tool 'search_engine' execution failed: Request failed with status code 407",
+      "organic_count": 0,
+      "organic": []
+    },
+    {
+      "step": "scrape_batch",
+      "isError": false,
+      "error": null,
+      "input_urls": [
+        "https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015"
+      ],
+      "allSettled": true,
+      "entry_count": 1,
+      "entries": [
+        {
+          "status": "rejected",
+          "url": null,
+          "content_chars": 0,
+          "content_bytes": 0,
+          "shape_keys": [
+            "status",
+            "reason"
+          ],
+          "value_keys": [],
+          "reason": "[object Object]"
+        }
+      ]
+    },
+    {
+      "step": "harvest_pass",
+      "unique_product_urls": 0,
+      "sample": []
+    },
+    {
+      "step": "extract_target",
+      "url": null
+    },
+    {
+      "step": "blocking_experiment_skipped",
+      "reason": "scrape_batch returned no fulfilled URL to extract"
+    }
+  ],
+  "finished_at": "2026-09-01T19:39:04.387Z"
+}

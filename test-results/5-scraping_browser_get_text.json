@@ -1,0 +1,4 @@
+{
+  "skipped": "navigate failed",
+  "navigateError": "Tool 'scraping_browser_navigate' execution failed: Error retrieving browser credentials: Request failed with status code 407"
+}

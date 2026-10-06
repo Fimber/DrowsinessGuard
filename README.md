@@ -4,6 +4,8 @@ Browser-only drowsiness aid. The camera feed, MediaPipe landmarks, and Eye Aspec
 
 This is a **safety aid, not a substitute for rest**. Do not drive if you are tired.
 
+Technical design (EAR math, calibration, state machine, MediaPipe landmark indices, privacy): [docs/TECHNICAL.md](docs/TECHNICAL.md).
+
 ## Run
 
 ```bash

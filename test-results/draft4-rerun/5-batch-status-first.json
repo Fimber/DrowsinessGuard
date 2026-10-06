@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"da5ece39-9541-43cb-9b60-dc0615ac18e8\",\n  \"status\": \"PROCESSING\",\n  \"total\": 3,\n  \"completed\": 0,\n  \"failed\": 0,\n  \"creditsUsed\": 0,\n  \"results\": [\n    {\n      \"index\": 0,\n      \"url\": \"https://www.bestbuy.com/product/apple-airpods-4-white/JJGCQ83JQ5/sku/6447384\",\n      \"success\": false,\n      \"data\": null,\n      \"error\": null\n    },\n    {\n      \"index\": 1,\n      \"url\": \"https://www.bestbuy.com/product/jbl-vibe-beam-2-noise-cancelling-earbuds-2025-black/J7LXFWXFJH/sku/6611536\",\n      \"success\": false,\n      \"data\": null,\n      \"error\": null\n    },\n    {\n      \"index\": 2,\n      \"url\": \"https://www.bestbuy.com/product/samsung-galaxy-buds3-pro-wireless-earbud-headphones-silver/J3ZYG2KRJL\",\n      \"success\": false,\n      \"data\": null,\n      \"error\": null\n    }\n  ],\n  \"createdAt\": \"2026-09-02T07:04:05.675+00:00\",\n  \"completedAt\": null\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 4
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "vendor": "CircleCI",
+    "url": "https://circleci.com/pricing/",
+    "isError": true,
+    "bytes": 68,
+    "priceMatches": 0,
+    "pricingWords": 0,
+    "hasPricing": false,
+    "errMsg": "Thunderbit API error (503): Unable to fetch data, please retry later"
+  }
+]

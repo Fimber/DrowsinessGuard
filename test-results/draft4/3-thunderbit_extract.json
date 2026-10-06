@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"url\": \"https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015\",\n  \"data\": [\n    {\n      \"type\": \"Wireless Headphones\",\n      \"properties\": \"\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

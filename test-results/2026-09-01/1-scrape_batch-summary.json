@@ -1,0 +1,14 @@
+{
+  "isError": false,
+  "textLen": 3183,
+  "textHead": "[\n  {\n    \"status\": \"rejected\",\n    \"reason\": {\n      \"message\": \"Request failed with status code 407\",\n      \"name\": \"AxiosError\",\n      \"stack\": \"AxiosError: Request failed with status code 407\\n    at settle (file:///C:/Users/admin/AppData/Local/Temp/mcp-article-test/node_modules/axios/lib/core/settle.js:19:12)\\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/admin/AppData/Local/Temp/m",
+  "entries": [
+    {
+      "status": "rejected",
+      "url": null,
+      "contentChars": 0,
+      "hasAirPods": false,
+      "priceCount": 0
+    }
+  ]
+}

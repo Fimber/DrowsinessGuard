@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"url\": \"https://github.com/pricing\",\n  \"data\": [\n    {\n      \"url\": \"https://github.com/pricing\",\n      \"title\": \"\",\n      \"fields\": \"\",\n      \"schema\": \"\",\n      \"first_subpage_url\": \"\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

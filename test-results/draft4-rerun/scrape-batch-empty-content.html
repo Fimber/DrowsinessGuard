@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>scrape_batch fulfilled empty content</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f4f5;
+      color: #18181b;
+      font-family: ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    }
+    .page {
+      width: 1280px;
+      min-height: 720px;
+      padding: 36px 40px 28px;
+    }
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #71717a;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 22px;
+      letter-spacing: -0.02em;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      position: relative;
+    }
+    .panel {
+      background: #ffffff;
+      border: 1px solid #d4d4d8;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid #e4e4e7;
+      font-size: 12px;
+      color: #52525b;
+    }
+    .panel-head strong { color: #18181b; font-weight: 600; }
+    .ok { color: #3f6212; }
+    pre {
+      margin: 0;
+      padding: 16px 16px 20px;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .k { color: #1d4ed8; }
+    .s { color: #9a3412; }
+    .p { color: #3f3f46; }
+    .ellipsis { color: #a1a1aa; }
+    .hit {
+      background: #fef08a;
+      color: #854d0e;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 3px;
+      box-shadow: 0 0 0 2px #facc15;
+    }
+    .callout {
+      position: absolute;
+      right: -8px;
+      top: 268px;
+      width: 220px;
+      pointer-events: none;
+    }
+    .callout svg { display: block; }
+    .callout-label {
+      position: absolute;
+      left: 78px;
+      top: -6px;
+      width: 150px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #b45309;
+      line-height: 1.3;
+    }
+    .caption {
+      margin-top: 54px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #27272a;
+    }
+    .caption em { font-style: italic; font-weight: 600; }
+    .source {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #71717a;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="kicker">scrape_batch · Promise.allSettled · live 1 Sep 2026</div>
+    <h1>Two fulfilled entries. Only one has a page.</h1>
+    <div class="row">
+      <div class="panel">
+        <div class="panel-head">
+          <span>entry [0] · wireless-headphones</span>
+          <strong class="ok">status: fulfilled</strong>
+        </div>
+        <pre><span class="p">{</span>
+  <span class="k">"status"</span>: <span class="s">"fulfilled"</span>,
+  <span class="k">"value"</span>: <span class="p">{</span>
+    <span class="k">"url"</span>: <span class="s">"https://www.bestbuy.com/site/headphones/wireless-headphones/pcmcat331200050015.c?id=pcmcat331200050015"</span>,
+    <span class="k">"content"</span>: <span class="s">"Wireless Headphones: Wireless Earbuds - Best Buy\n\nLabor Day SaleEnds September 7. Limited quantities. No rainchecks.[Shop now](/top-deals)\n\n…"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="ellipsis">// 18.73 KB of Markdown truncated</span></pre>
+      </div>
+      <div class="panel" style="position: relative;">
+        <div class="panel-head">
+          <span>entry [1] · headphones abcat0204000</span>
+          <strong class="ok">status: fulfilled</strong>
+        </div>
+        <pre><span class="p">{</span>
+  <span class="k">"status"</span>: <span class="s">"fulfilled"</span>,
+  <span class="k">"value"</span>: <span class="p">{</span>
+    <span class="k">"url"</span>: <span class="s">"https://www.bestbuy.com/site/electronics/headphones/abcat0204000.c?id=abcat0204000"</span>,
+    <span class="k">"content"</span>: <span class="hit">""</span>
+  <span class="p">}</span>
+<span class="p">}</span></pre>
+        <div class="callout">
+          <svg width="220" height="70" viewBox="0 0 220 70" fill="none">
+            <path d="M12 48 C 40 48, 70 18, 118 14" stroke="#d97706" stroke-width="2.4" fill="none"/>
+            <polygon points="8,48 20,43 18,54" fill="#d97706"/>
+          </svg>
+          <div class="callout-label">empty string — the page did not come back</div>
+        </div>
+      </div>
+    </div>
+    <p class="caption"><em>Status alone does not tell you a page came back.</em> Check <code>value.content</code> length, not only <code>status</code>.</p>
+    <p class="source">Source: scrape_batch on 3 Best Buy listing URLs, @brightdata/mcp@2.11.1. Third entry also fulfilled, 50.39 KB, omitted here.</p>
+  </div>
+</body>
+</html>

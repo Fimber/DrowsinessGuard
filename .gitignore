@@ -4,3 +4,5 @@ dist
 *.local
 .vscode
 .idea
+__pycache__/
+*.pyc

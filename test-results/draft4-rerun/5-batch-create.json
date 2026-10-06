@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"da5ece39-9541-43cb-9b60-dc0615ac18e8\",\n  \"status\": \"PROCESSING\",\n  \"total\": 3,\n  \"completed\": 0,\n  \"creditsUsed\": 0,\n  \"createdAt\": \"2026-09-02T07:04:05.675+00:00\",\n  \"completedAt\": null\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+      "tools": {},
+      "prompts": {},
+      "logging": {},
+      "completions": {}
+    },
+    "serverInfo": {
+      "name": "Bright Data",
+      "version": "2.11.1"
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 1
+}

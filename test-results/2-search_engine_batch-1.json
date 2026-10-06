@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[\n  {\n    \"query\": \"Datadog pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Vercel pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Netlify pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Twilio pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Stripe pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  }\n]"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

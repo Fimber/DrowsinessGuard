@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[\n  {\n    \"query\": \"MongoDB Atlas pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Sentry pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"LaunchDarkly pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"PagerDuty pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  },\n  {\n    \"query\": \"Postman pricing\",\n    \"engine\": \"google\",\n    \"error\": \"Request failed with status code 407\"\n  }\n]"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 8
+}
