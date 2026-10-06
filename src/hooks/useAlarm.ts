@@ -1,87 +1,56 @@
 import { useCallback, useEffect, useRef } from "react";
 
-const ALARM_SRC = "/sounds/OGAWAKEUP.mp4";
-/** Boost above file volume so ALARM cuts through cabin noise. */
-const ALARM_GAIN = 4;
-
-function createAudioContext(): AudioContext | null {
-  const AudioCtx =
-    window.AudioContext ||
-    (window as unknown as { webkitAudioContext: typeof AudioContext })
-      .webkitAudioContext;
-  return AudioCtx ? new AudioCtx() : null;
-}
-
 /**
- * WARNING: one-shot synthesized chime (never looped).
- * ALARM: looping OGAWAKEUP clip at high gain. Stops the moment state leaves ALARM.
+ * Web Audio alarm driven by drowsiness *state transitions*, not raw EAR.
+ * WARNING plays a one-shot chime (never looped — looping trains people to ignore it).
+ * ALARM is a looping 880 Hz square stutter that stops the moment state leaves ALARM.
  *
- * AudioContext + a muted prime-play run on Start so autoplay policy allows the alarm.
+ * AudioContext is created/resumed from the Start button (a user gesture) so
+ * autoplay policy does not mute the first warning.
  */
 export function useAlarm() {
   const ctxRef = useRef<AudioContext | null>(null);
-  const alarmElRef = useRef<HTMLVideoElement | null>(null);
-  const gainRef = useRef<GainNode | null>(null);
-  const hookedRef = useRef(false);
+  const alarmNodesRef = useRef<{
+    osc: OscillatorNode;
+    lfo: OscillatorNode;
+    gain: GainNode;
+  } | null>(null);
 
-  const ensureAlarmEl = useCallback((): HTMLVideoElement => {
-    if (alarmElRef.current) return alarmElRef.current;
-    const el = document.createElement("video");
-    el.src = ALARM_SRC;
-    el.loop = true;
-    el.preload = "auto";
-    el.playsInline = true;
-    el.setAttribute("playsinline", "");
-    el.setAttribute("webkit-playsinline", "");
-    el.volume = 1;
-    alarmElRef.current = el;
-    return el;
-  }, []);
-
-  const hookBoost = useCallback((ctx: AudioContext, el: HTMLVideoElement) => {
-    if (hookedRef.current) return;
-    const source = ctx.createMediaElementSource(el);
-    const gain = ctx.createGain();
-    gain.gain.value = ALARM_GAIN;
-    source.connect(gain);
-    gain.connect(ctx.destination);
-    gainRef.current = gain;
-    hookedRef.current = true;
+  const getContext = useCallback((): AudioContext | null => {
+    return ctxRef.current;
   }, []);
 
   const unlock = useCallback(async () => {
+    const AudioCtx =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext;
+    if (!AudioCtx) return;
     if (!ctxRef.current) {
-      ctxRef.current = createAudioContext();
+      ctxRef.current = new AudioCtx();
     }
-    const ctx = ctxRef.current;
-    if (ctx?.state === "suspended") {
-      await ctx.resume();
+    if (ctxRef.current.state === "suspended") {
+      await ctxRef.current.resume();
     }
-
-    const el = ensureAlarmEl();
-    if (ctx) hookBoost(ctx, el);
-
-    el.muted = true;
-    try {
-      await el.play();
-      el.pause();
-      el.currentTime = 0;
-    } catch {
-      // Gesture may still be enough for a later unmuted play().
-    }
-    el.muted = false;
-    el.volume = 1;
-  }, [ensureAlarmEl, hookBoost]);
+  }, []);
 
   const stopAlarm = useCallback(() => {
-    const el = alarmElRef.current;
-    if (!el) return;
-    el.pause();
-    el.currentTime = 0;
+    const nodes = alarmNodesRef.current;
+    if (!nodes) return;
+    try {
+      nodes.osc.stop();
+      nodes.lfo.stop();
+    } catch {
+      // already stopped
+    }
+    nodes.osc.disconnect();
+    nodes.lfo.disconnect();
+    nodes.gain.disconnect();
+    alarmNodesRef.current = null;
   }, []);
 
   const chime = useCallback(() => {
-    const ctx = ctxRef.current;
+    const ctx = getContext();
     if (!ctx) return;
 
     const ping = (freq: number, when: number, duration: number, peak: number) => {
@@ -101,31 +70,39 @@ export function useAlarm() {
     const now = ctx.currentTime;
     ping(523.25, now, 0.22, 0.12);
     ping(659.25, now + 0.14, 0.28, 0.1);
-  }, []);
+  }, [getContext]);
 
   const startAlarm = useCallback(() => {
-    const el = ensureAlarmEl();
-    const ctx = ctxRef.current;
-    if (ctx) {
-      if (ctx.state === "suspended") void ctx.resume();
-      hookBoost(ctx, el);
-      if (gainRef.current) gainRef.current.gain.value = ALARM_GAIN;
-    }
-    el.muted = false;
-    el.volume = 1;
-    el.loop = true;
-    if (el.currentTime > 0) el.currentTime = 0;
-    void el.play().catch(() => {
-      // If autoplay is still blocked, Start already tried to unlock.
-    });
-  }, [ensureAlarmEl, hookBoost]);
+    const ctx = getContext();
+    if (!ctx) return;
+    if (alarmNodesRef.current) return;
+
+    const osc = ctx.createOscillator();
+    osc.type = "square";
+    osc.frequency.value = 880;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0.09;
+
+    // Square LFO pulses gain on/off (~6 Hz stutter).
+    const lfo = ctx.createOscillator();
+    lfo.type = "square";
+    lfo.frequency.value = 6;
+    const lfoDepth = ctx.createGain();
+    lfoDepth.gain.value = 0.09;
+    lfo.connect(lfoDepth);
+    lfoDepth.connect(gain.gain);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    lfo.start();
+    alarmNodesRef.current = { osc, lfo, gain };
+  }, [getContext]);
 
   useEffect(() => {
     return () => {
       stopAlarm();
-      alarmElRef.current = null;
-      gainRef.current = null;
-      hookedRef.current = false;
       const ctx = ctxRef.current;
       if (ctx) {
         void ctx.close();
